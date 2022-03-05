@@ -1,0 +1,20 @@
+services:
+  devcontainer:
+    build:
+      context: docker/devcontainer
+      dockerfile: ./Dockerfile
+    image: devcontainer_othellon
+    ports:
+      - 3000:3000
+  mysql:
+    build:
+      context: docker/mysql
+      dockerfile: ./Dockerfile
+    image: devcontainer_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: devcontainer
+    volumes:
+      - ./mysql/initdb:/docker-entrypoint-initdb.d
+      - ./mysql/my.conf:/etc/mysql/conf.d/my.conf
+    ports:
+      - 3306:3306
