@@ -14,7 +14,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: devcontainer
     volumes:
-      - ./mysql/initdb:/docker-entrypoint-initdb.d
-      - ./mysql/my.conf:/etc/mysql/conf.d/my.conf
+      - docker/mysql/initdb:/docker-entrypoint-initdb.d
+      - docker/mysql/my.conf:/etc/mysql/conf.d/my.conf
     ports:
       - 3306:3306
