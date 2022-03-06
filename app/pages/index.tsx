@@ -1,7 +1,16 @@
+/* eslint-disable @next/next/no-img-element */
 
 const StaticPage = () => {
   return (
-    <h1>This page is SSG</h1>
+    <div>
+      <h1>This page is SSG</h1>
+      <img
+        src="https://3.bp.blogspot.com/-hRiScUsWZHk/VA7mVasETMI/AAAAAAAAmOg/OHTyO2Zjxck/s800/othello_game.png"
+        alt="othello"
+        width={300}
+        height={300}
+      />
+    </div>
   )
 }
 
