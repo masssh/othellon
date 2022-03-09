@@ -1,4 +1,6 @@
 FROM node:16 AS builder
+COPY . /app
+WORKDIR /app
 RUN npm install
 RUN npm run build
 
@@ -10,10 +12,10 @@ WORKDIR /app
 ENV NODE_ENV production
 ENV PORT 3000
 
-COPY --from=builder /next.config.js ./
-COPY --from=builder /package.json ./
-COPY --from=builder /public ./
-COPY --from=builder /.next ./
+COPY --from=builder /app/next.config.js ./
+COPY --from=builder /app/package.json ./
+COPY --from=builder /app/public ./
+COPY --from=builder /app/.next ./
 
 EXPOSE 3000
 CMD ["node", "server.js"]
