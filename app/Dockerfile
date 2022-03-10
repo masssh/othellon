@@ -19,4 +19,4 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next ./.next
 
 EXPOSE 3000
-CMD ["/nodejs/bin/npm", "run", "start"]
+CMD ["./node_modules/.bin/next", "start"]
