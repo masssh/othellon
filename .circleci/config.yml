@@ -5,4 +5,7 @@ jobs:
     steps:
       - checkout
       - run: docker build -t masssh/othellon-app .
+      - run:
+          command: docker build -t masssh/othellon-app .
+          working_directory: ./app
       - run: docker push masssh/othellon-app:$CIRCLE_BRANCH
