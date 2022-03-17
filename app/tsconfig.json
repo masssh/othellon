@@ -21,9 +21,7 @@
     "typeRoots": [
       "./node_modules/phaser/types"
     ],
-    "types": [
-      "Phaser"
-    ]
+    "types": []
   },
   "include": [
     "next-env.d.ts",
